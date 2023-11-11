@@ -10,5 +10,10 @@
         "ecmaVersion": "latest"
     },
     "rules": {
+      "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+      "class-methods-use-this": [
+        "error",
+        { "exceptMethods": "_validateProperty" }
+      ]
     }
 }
