@@ -24,32 +24,8 @@ const getMapCommentDbToModel = ({
   username,
 });
 
-const mapReplyDbToModel = ({ id, content, publisher }) => ({
-  id,
-  content,
-  owner: publisher,
-});
-
-const getMapReplyDbToModel = ({
-  id,
-  comment_id,
-  content,
-  date,
-  username,
-  is_delete,
-}) => ({
-  id,
-  commentId: comment_id,
-  content,
-  date,
-  username,
-  isDelete: is_delete,
-});
-
 module.exports = {
   mapThreadDbToModel,
   mapCommentDbToModel,
   getMapCommentDbToModel,
-  mapReplyDbToModel,
-  getMapReplyDbToModel,
 };
