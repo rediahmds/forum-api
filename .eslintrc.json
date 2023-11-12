@@ -27,6 +27,7 @@
     ],
     "implicit-arrow-linebreak": "off",
     "object-curly-newline": "off",
-    "function-paren-newline": ["error", { "consistent": true }]
+    "function-paren-newline": "off",
+    "camelcase": "off"
   }
 }
