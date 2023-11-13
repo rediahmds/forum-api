@@ -18,7 +18,7 @@ describe('DetailComment entities', () => {
     const payload = {
       id: 123,
       username: {},
-      date: 2022,
+      date: 2023,
       content: {},
       isDelete: false,
     };

@@ -15,21 +15,21 @@ class DetailComment {
     const { id, username, date, content, isDelete } = payload;
 
     if (
-      !id ||
-      !username ||
-      !date ||
-      !content ||
-      isDelete === undefined
+      !id
+      || !username
+      || !date
+      || !content
+      || isDelete === undefined
     ) {
       throw new Error('DETAIL_COMMENT.NOT_CONTAIN_NEEDED_PROPERTY');
     }
 
     if (
-      typeof id !== 'string' ||
-      typeof username !== 'string' ||
-      typeof date !== 'string' ||
-      typeof content !== 'string' ||
-      typeof isDelete !== 'boolean'
+      typeof id !== 'string'
+      || typeof username !== 'string'
+      || typeof date !== 'string'
+      || typeof content !== 'string'
+      || typeof isDelete !== 'boolean'
     ) {
       throw new Error('DETAIL_COMMENT.NOT_MEET_DATA_TYPE_SPESIFICATION');
     }

@@ -20,7 +20,7 @@ describe('DetailThread entities', () => {
       id: 123,
       title: 'sebuah thread',
       body: {},
-      date: 2022,
+      date: 2023,
       username: {},
       comments: 'sebuah comment',
     };
@@ -37,7 +37,7 @@ describe('DetailThread entities', () => {
       id: 'thread-123',
       title: 'sebuah thread',
       body: 'sebuah body thread',
-      date: '2022',
+      date: '2023',
       username: 'dicoding',
       comments: [],
     };
