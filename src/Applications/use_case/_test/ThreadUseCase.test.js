@@ -2,8 +2,6 @@ const NewThread = require('../../../Domains/threads/entities/NewThread');
 const AddedThread = require('../../../Domains/threads/entities/AddedThread');
 const DetailThread = require('../../../Domains/threads/entities/DetailThread');
 const DetailComment = require('../../../Domains/comments/entities/DetailComment');
-const ThreadRepository = require('../../../Domains/threads/ThreadRepository');
-const CommentRepository = require('../../../Domains/comments/CommentRepository');
 const ThreadUseCase = require('../ThreadUseCase');
 
 describe('ThreadUseCase', () => {
@@ -83,14 +81,18 @@ describe('ThreadUseCase', () => {
         }),
       ];
 
-      const detailComments = retrievedComments.map(comment => ({
+      const detailComments = retrievedComments.map((comment) => ({
         ...comment,
-        content: comment.isDelete ? '**comment deleted**' : comment.content,
+        content: comment.isDelete
+          ? '**komentar telah dihapus**'
+          : comment.content,
       }));
 
       const expectedDetailThread = {
         ...retrievedThread[0],
-        comments: detailComments.map(({ isDelete, ...filteredComment }) => filteredComment),
+        comments: detailComments.map(
+          ({ isDelete, ...filteredComment }) => filteredComment
+        ),
       };
 
       // Mocking
