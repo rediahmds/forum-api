@@ -22,7 +22,9 @@ class ThreadUseCase {
       id: comment.id,
       username: comment.username,
       date: comment.date,
-      content: comment.isDelete ? '**comment deleted**' : comment.content,
+      content: comment.isDelete
+        ? '**komentar telah dihapus**'
+        : comment.content,
     }));
 
     const thread = {
