@@ -2,6 +2,7 @@ const NewThread = require('../../../Domains/threads/entities/NewThread');
 const AddedThread = require('../../../Domains/threads/entities/AddedThread');
 const DetailThread = require('../../../Domains/threads/entities/DetailThread');
 const DetailComment = require('../../../Domains/comments/entities/DetailComment');
+const ThreadRepository = require('../../../Domains/threads/ThreadRepository');
 const ThreadUseCase = require('../ThreadUseCase');
 
 describe('ThreadUseCase', () => {
@@ -22,9 +23,17 @@ describe('ThreadUseCase', () => {
       });
 
       // Mocking
-      const mockThreadRepository = {
-        addThread: jest.fn().mockResolvedValue(expectedAddedThread),
-      };
+      const mockThreadRepository = new ThreadRepository();
+
+      mockThreadRepository.addThread = jest.fn(() =>
+        Promise.resolve(
+          new AddedThread({
+            id: 'thread-123',
+            title: useCasePayload.title,
+            owner: userIdFromAccessToken,
+          })
+        )
+      );
 
       const threadUseCase = new ThreadUseCase({
         threadRepository: mockThreadRepository,
