@@ -31,7 +31,7 @@ class DetailComment {
       || typeof content !== 'string'
       || typeof isDelete !== 'boolean'
     ) {
-      throw new Error('DETAIL_COMMENT.NOT_MEET_DATA_TYPE_SPESIFICATION');
+      throw new Error('DETAIL_COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
 }

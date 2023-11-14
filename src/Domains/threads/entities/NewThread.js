@@ -14,7 +14,7 @@ class NewThread {
     }
 
     if (typeof title !== 'string' || typeof body !== 'string') {
-      throw new Error('NEW_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION');
+      throw new Error('NEW_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
 }

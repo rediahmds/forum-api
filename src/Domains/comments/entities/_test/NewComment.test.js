@@ -19,7 +19,7 @@ describe('NewComment entities', () => {
 
     // Action and Assert
     expect(() => new NewComment(payload)).toThrowError(
-      'NEW_COMMENT.NOT_MEET_DATA_TYPE_SPESIFICATION'
+      'NEW_COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION'
     );
   });
 

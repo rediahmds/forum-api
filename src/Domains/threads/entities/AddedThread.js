@@ -19,7 +19,7 @@ class AddedThread {
       || typeof title !== 'string'
       || typeof owner !== 'string'
     ) {
-      throw new Error('ADDED_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION');
+      throw new Error('ADDED_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
 }

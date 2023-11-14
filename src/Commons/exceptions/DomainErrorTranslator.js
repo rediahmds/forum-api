@@ -36,13 +36,13 @@ DomainErrorTranslator._directories = {
   'NEW_THREAD.NOT_CONTAIN_NEEDED_PROPERTY': new InvariantError(
     'payload thread yang dikirimkan tidak sesuai'
   ),
-  'NEW_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION': new InvariantError(
+  'NEW_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION': new InvariantError(
     'tipe data dalam payload tidak sesuai'
   ),
   'NEW_COMMENT.NOT_CONTAIN_NEEDED_PROPERTY': new InvariantError(
     'payload comment yang dikirimkan tidak sesuai'
   ),
-  'NEW_COMMENT.NOT_MEET_DATA_TYPE_SPESIFICATION': new InvariantError(
+  'NEW_COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION': new InvariantError(
     'tipe data dalam payload comment tidak sesuai'
   ),
 };

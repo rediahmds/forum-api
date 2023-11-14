@@ -27,7 +27,7 @@ describe('DetailThread entities', () => {
 
     // Action and Assert
     expect(() => new DetailThread(payload)).toThrowError(
-      'DETAIL_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION'
+      'DETAIL_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION'
     );
   });
 

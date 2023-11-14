@@ -22,7 +22,7 @@ describe('NewThread entities', () => {
 
     // Action and Assert
     expect(() => new NewThread(payload)).toThrowError(
-      'NEW_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION'
+      'NEW_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION'
     );
   });
 

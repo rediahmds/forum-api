@@ -25,7 +25,7 @@ describe('DetailComment entities', () => {
 
     // Action and Assert
     expect(() => new DetailComment(payload)).toThrowError(
-      'DETAIL_COMMENT.NOT_MEET_DATA_TYPE_SPESIFICATION'
+      'DETAIL_COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION'
     );
   });
 

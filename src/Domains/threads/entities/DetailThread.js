@@ -27,7 +27,7 @@ class DetailThread {
       || typeof username !== 'string'
       || typeof comments !== 'object'
     ) {
-      throw new Error('DETAIL_THREAD.NOT_MEET_DATA_TYPE_SPESIFICATION');
+      throw new Error('DETAIL_THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
 }
