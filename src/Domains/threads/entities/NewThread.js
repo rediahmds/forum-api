@@ -2,8 +2,10 @@ class NewThread {
   constructor(payload) {
     this._verifyPayload(payload);
 
-    this.title = payload.title;
-    this.body = payload.body;
+    const { title, body } = payload;
+
+    this.title = title;
+    this.body = body;
   }
 
   _verifyPayload(payload) {
