@@ -18,14 +18,14 @@ class ThreadUseCase {
       threadId
     );
 
-    const comments = commentsResult.map((comment) => ({
-      id: comment.id,
-      username: comment.username,
-      date: comment.date,
-      content: comment.isDelete
-        ? '**komentar telah dihapus**'
-        : comment.content,
-    }));
+    const comments = commentsResult.map(
+      ({ id, username, date, isDelete, content }) => ({
+        id,
+        username,
+        date,
+        content: isDelete ? '**komentar telah dihapus**' : content,
+      })
+    );
 
     const thread = {
       ...threadResult,
