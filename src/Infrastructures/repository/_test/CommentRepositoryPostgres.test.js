@@ -164,6 +164,17 @@ describe('CommentRepositoryPostgres', () => {
         await expect(
           commentRepositoryPostgres.deleteCommentById('comment-123')
         ).resolves.not.toThrowError();
+
+        const findComments = await CommentsTableTestHelper.findCommentById(
+          'comment-123'
+        );
+        expect(findComments).toHaveLength(1);
+
+        const comment = findComments[0];
+        expect(comment).toHaveProperty('is_delete');
+
+        const { is_delete } = comment;
+        expect(is_delete).toStrictEqual(true);
       });
     });
 
