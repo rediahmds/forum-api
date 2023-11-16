@@ -20,7 +20,7 @@ const getMapCommentDbToModel = ({
   id,
   date,
   content,
-  isDelete: is_delete,
+  is_delete: is_delete,
   username,
 });
 
