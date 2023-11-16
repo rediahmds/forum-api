@@ -70,9 +70,10 @@ describe('CommentRepositoryPostgres', () => {
       it('should return comments correctly', async () => {
         await UsersTableTestHelper.addUser({});
         await ThreadsTableTestHelper.addThread({});
-        await CommentsTableTestHelper.addComment({});
-        await CommentsTableTestHelper.addComment({ id: 'comment-234' });
-        await CommentsTableTestHelper.addComment({ id: 'comment-345' });
+        await CommentsTableTestHelper.addComment({
+          id: 'comment-234',
+          date: 'November 16, 2023',
+        });
 
         const commentRepositoryPostgres = new CommentRepositoryPostgres(
           pool,
@@ -85,7 +86,20 @@ describe('CommentRepositoryPostgres', () => {
         );
 
         // Assert
-        expect(comments).toHaveLength(3);
+        expect(comments).toHaveLength(1);
+        const { id, date, content, is_delete, username } = comments[0];
+
+        expect(id).toStrictEqual('comment-234');
+        expect(
+          date.toLocaleDateString('en-EN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        ).toStrictEqual('November 16, 2023');
+        expect(content).toStrictEqual('sebuah komentar');
+        expect(is_delete).toStrictEqual(false);
+        expect(username).toStrictEqual('dicoding');
       });
     });
 
