@@ -1,9 +1,6 @@
 const AuthorizationError = require('../../Commons/exceptions/AuthorizationError');
 const NotFoundError = require('../../Commons/exceptions/NotFoundError');
-const {
-  mapCommentDbToModel,
-  getMapCommentDbToModel,
-} = require('../../Commons/utils');
+const { mapCommentDbToModel } = require('../../Commons/utils');
 const CommentRepository = require('../../Domains/comments/CommentRepository');
 const AddedComment = require('../../Domains/comments/entities/AddedComment');
 
@@ -40,7 +37,7 @@ class CommentRepositoryPostgres extends CommentRepository {
 
     const result = await this._pool.query(query);
 
-    return result.rows.map(getMapCommentDbToModel);
+    return result.rows;
   }
 
   async verifyCommentPublisher(id, owner) {
