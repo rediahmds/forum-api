@@ -1,5 +1,4 @@
 const ThreadRepository = require('../../Domains/threads/ThreadRepository');
-const { mapThreadDbToModel } = require('../../Commons/utils');
 const AddedThread = require('../../Domains/threads/entities/AddedThread');
 const NotFoundError = require('../../Commons/exceptions/NotFoundError');
 
