@@ -19,11 +19,11 @@ class ThreadUseCase {
     );
 
     const comments = commentsResult.map(
-      ({ id, username, date, isDelete, content }) => ({
+      ({ id, username, date, is_delete, content }) => ({
         id,
         username,
         date,
-        content: isDelete ? '**komentar telah dihapus**' : content,
+        content: is_delete ? '**komentar telah dihapus**' : content,
       })
     );
 

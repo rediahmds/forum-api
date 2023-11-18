@@ -79,20 +79,20 @@ describe('ThreadUseCase', () => {
           username: 'user A',
           date: '2023',
           content: 'a comment A',
-          isDelete: true,
+          is_delete: true,
         }),
         new DetailComment({
           id: 'comment-234',
           username: 'user B',
           date: '2023',
           content: 'a comment B',
-          isDelete: false,
+          is_delete: false,
         }),
       ];
 
       const detailComments = retrievedComments.map((comment) => ({
         ...comment,
-        content: comment.isDelete
+        content: comment.is_delete
           ? '**komentar telah dihapus**'
           : comment.content,
       }));
@@ -100,7 +100,7 @@ describe('ThreadUseCase', () => {
       const expectedDetailThread = {
         ...retrievedThread[0],
         comments: detailComments.map(
-          ({ isDelete, ...filteredComment }) => filteredComment
+          ({ is_delete, ...filteredComment }) => filteredComment
         ),
       };
 

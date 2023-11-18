@@ -20,7 +20,7 @@ describe('DetailComment entities', () => {
       username: {},
       date: 2023,
       content: {},
-      isDelete: false,
+      is_delete: false,
     };
 
     // Action and Assert
@@ -36,7 +36,7 @@ describe('DetailComment entities', () => {
       username: 'dicoding',
       date: '2023-11-11T17:06:49.928Z',
       content: 'sebuah comment',
-      isDelete: false,
+      is_delete: false,
     };
 
     // Action
@@ -47,6 +47,6 @@ describe('DetailComment entities', () => {
     expect(detailComment.username).toEqual(payload.username);
     expect(detailComment.date).toEqual(payload.date);
     expect(detailComment.content).toEqual(payload.content);
-    expect(detailComment.isDelete).toEqual(payload.isDelete);
+    expect(detailComment.is_delete).toEqual(payload.is_delete);
   });
 });

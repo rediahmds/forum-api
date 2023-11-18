@@ -29,7 +29,7 @@ describe('AddCommentUseCase', () => {
 
     /** mocking needed function */
     mockThreadRepository.verifyExistingThread = jest.fn(() =>
-      Promise.resolve(useCaseParam.threadId)
+      Promise.resolve()
     );
     mockCommentRepository.addComment = jest.fn(() =>
       Promise.resolve(

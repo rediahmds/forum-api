@@ -8,11 +8,21 @@ const CommentsTableTestHelper = {
     threadId = 'thread-123',
     owner = 'user-123',
     content = 'sebuah komentar',
+    date = '',
   }) {
-    const query = {
-      text: 'INSERT INTO comments(id, thread_id, publisher, content) VALUES($1, $2, $3, $4)',
-      values: [id, threadId, owner, content],
-    };
+    let query;
+
+    if (!date) {
+      query = {
+        text: 'INSERT INTO comments(id, thread_id, publisher, content) VALUES($1, $2, $3, $4)',
+        values: [id, threadId, owner, content],
+      };
+    } else {
+      query = {
+        text: 'INSERT INTO comments(id, date, thread_id, publisher, content) VALUES($1, $2, $3, $4, $5)',
+        values: [id, date, threadId, owner, content],
+      };
+    }
 
     await pool.query(query);
   },

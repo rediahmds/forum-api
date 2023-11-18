@@ -1,5 +1,4 @@
 const ThreadRepository = require('../../Domains/threads/ThreadRepository');
-const { mapThreadDbToModel } = require('../../Commons/utils');
 const AddedThread = require('../../Domains/threads/entities/AddedThread');
 const NotFoundError = require('../../Commons/exceptions/NotFoundError');
 
@@ -15,13 +14,13 @@ class ThreadRepositoryPostgres extends ThreadRepository {
     const id = `thread-${this._idGenerator()}`;
 
     const query = {
-      text: 'INSERT INTO threads(id, title, body, publisher) VALUES($1, $2, $3, $4) RETURNING id, title, publisher',
+      text: 'INSERT INTO threads(id, title, body, publisher) VALUES($1, $2, $3, $4) RETURNING id, title, publisher as owner',
       values: [id, title, body, owner],
     };
 
     const result = await this._pool.query(query);
 
-    return new AddedThread(result.rows.map(mapThreadDbToModel)[0]);
+    return new AddedThread(result.rows[0]);
   }
 
   async getThreadById(id) {
